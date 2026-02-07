@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine 💖</title>
+
+<style>
+body{
+    background:#ffdde1;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* Card box */
+.container{
+    background:white;
+    padding:150px;          /* more inner space */
+    border-radius:90px;    /* softer corners */
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    position:relative;
+    width:700px;           /* ⭐ increase width */
+}
+
+/* Heading */
+h1{
+    color:#ff4d6d;
+    margin-bottom:30px;
+}
+
+/* Buttons */
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.3s;
+}
+
+#yesBtn{
+    background:#28a745;
+    color:white;
+}
+
+#noBtn{
+    background:#dc3545;
+    color:white;
+    position:absolute;
+}
+
+/* Success message style */
+.success{
+    color:#ff4d6d;
+    font-size:30px;
+    animation: pop 1s infinite alternate;
+}
+
+@keyframes pop{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.1); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainBox">
+
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <button id="yesBtn" onclick="sayYes()">YES 💚</button>
+    <button id="noBtn" onclick="moveButton()">NO 😁</button>
+
+</div>
+
+<script>
+
+// YES button clicked
+function sayYes(){
+    document.getElementById("mainBox").innerHTML =
+    "<h1 class='success'>Yayyy ❤️🥰<br>You made me the happiest person! 💖</h1>";
+}
+
+// NO button runs away
+function moveButton(){
+    var button = document.getElementById("noBtn");
+
+    var x = Math.random() * 300;
+    var y = Math.random() * 300;
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+</script>
+
+</body>
+</html>
